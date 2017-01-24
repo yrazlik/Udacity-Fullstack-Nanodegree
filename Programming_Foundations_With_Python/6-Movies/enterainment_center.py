@@ -36,5 +36,6 @@ movies = [toy_story, avatar, school_of_rock, ratatouille, midnight_in_paris, hun
 #print(toy_story.storyline)
 #print(avatar.storyline)
 #avatar.show_trailer()
-
+#print(media.Movie.VALID_RATINGS)
+#print(media.Movie.__doc__)
 fresh_tomatoes.open_movies_page(movies)
