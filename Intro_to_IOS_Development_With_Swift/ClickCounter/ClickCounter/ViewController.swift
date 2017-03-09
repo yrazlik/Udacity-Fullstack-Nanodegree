@@ -14,11 +14,13 @@ class ViewController: UIViewController {
     
     var label: UILabel!
     var button: UIButton!
+    var decrementButton: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         addLabel()
-        addButton()
+        addIncrementButton()
+        addDecrementButton()
     }
     
     func addLabel() {
@@ -29,25 +31,46 @@ class ViewController: UIViewController {
         self.label = label
     }
     
-    func addButton() {
+    func addIncrementButton() {
         let button = UIButton()
-        button.frame = CGRect(x:150, y: 250, width: 60, height: 60)
-        button.setTitle("Click", for: .normal)
+        button.frame = CGRect(x:150, y: 250, width: 90, height: 90)
+        button.setTitle("Increment", for: .normal)
         button.setTitleColor(UIColor.blue, for: .normal)
-        button.addTarget(self, action: #selector(ViewController.buttonClickListener), for: UIControlEvents.touchUpInside)
+        button.addTarget(self, action: #selector(ViewController.incrementButtonClickListener), for: UIControlEvents.touchUpInside)
         self.view.addSubview(button)
         self.button = button
     }
     
-    func buttonClickListener() {
+    func addDecrementButton() {
+        let button = UIButton()
+        button.frame = CGRect(x:150, y: 350, width: 90, height: 90)
+        button.setTitle("Decrement", for: .normal)
+        button.setTitleColor(UIColor.blue, for: .normal)
+        button.addTarget(self, action: #selector(ViewController.decrementButtonClickListener), for: UIControlEvents.touchUpInside)
+        self.view.addSubview(button)
+        self.button = button
+    }
+    
+    func incrementButtonClickListener() {
         incrementCount()
         updateLabelText(count: count)
     }
+
+    func decrementButtonClickListener() {
+        decrementCount()
+        updateLabelText(count: count)
+    }
+
     
     func incrementCount() {
         self.count += 1
     }
+
     
+    func decrementCount() {
+        self.count -= 1
+    }
+
     func updateLabelText(count: Int) -> Void {
         self.label.text = String(count)
     }
