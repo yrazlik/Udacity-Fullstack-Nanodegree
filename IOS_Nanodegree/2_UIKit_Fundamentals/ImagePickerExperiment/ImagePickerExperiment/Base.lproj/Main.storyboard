@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ImagePickerExperiment" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Boy-2M-t0D">
+                                <rect key="frame" x="77.5" y="269" width="219" height="128"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ggk-rN-Xfz">
+                                        <rect key="frame" x="5" y="5" width="209" height="30"/>
+                                        <state key="normal" title="Show UIImagePickerController"/>
+                                        <connections>
+                                            <action selector="buttonClickListener:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZQR-Pl-uwk"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Co-vg-CHN" userLabel="Show ActivityViewControllerButton">
+                                        <rect key="frame" x="12.5" y="49" width="194" height="30"/>
+                                        <state key="normal" title="Show ActivityViewController"/>
+                                        <connections>
+                                            <action selector="buttonClickListener:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qxi-hs-c1P"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uGV-HC-5oL" userLabel="Show AlertViewButton">
+                                        <rect key="frame" x="22" y="93" width="176" height="30"/>
+                                        <state key="normal" title="Show AlertViewController"/>
+                                        <connections>
+                                            <action selector="buttonClickListener:" destination="BYZ-38-t0r" eventType="touchUpInside" id="P35-aq-bhE"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Ggk-rN-Xfz" secondAttribute="trailing" constant="5" id="0Bu-qt-AOO"/>
+                                    <constraint firstItem="Ggk-rN-Xfz" firstAttribute="top" secondItem="Boy-2M-t0D" secondAttribute="top" constant="5" id="DqY-sz-ZLZ"/>
+                                    <constraint firstAttribute="bottom" secondItem="uGV-HC-5oL" secondAttribute="bottom" constant="5" id="Ul4-mz-jl0"/>
+                                    <constraint firstItem="uGV-HC-5oL" firstAttribute="centerX" secondItem="Boy-2M-t0D" secondAttribute="centerX" id="Usb-X4-IfV"/>
+                                    <constraint firstItem="8Co-vg-CHN" firstAttribute="centerX" secondItem="Boy-2M-t0D" secondAttribute="centerX" id="Vy4-6n-pAV"/>
+                                    <constraint firstItem="Ggk-rN-Xfz" firstAttribute="centerX" secondItem="Boy-2M-t0D" secondAttribute="centerX" id="bjz-fx-7fk"/>
+                                    <constraint firstItem="Ggk-rN-Xfz" firstAttribute="leading" secondItem="Boy-2M-t0D" secondAttribute="leading" constant="5" id="bv5-hL-cZD"/>
+                                    <constraint firstItem="uGV-HC-5oL" firstAttribute="top" secondItem="8Co-vg-CHN" secondAttribute="bottom" constant="14" id="cFz-zt-oaT"/>
+                                    <constraint firstItem="8Co-vg-CHN" firstAttribute="top" secondItem="Ggk-rN-Xfz" secondAttribute="bottom" constant="14" id="sJb-FY-0Jd"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Boy-2M-t0D" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="SBv-cP-AlQ"/>
+                            <constraint firstItem="Boy-2M-t0D" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="dWp-Fg-fw6"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="showActivityViewController" destination="8Co-vg-CHN" id="xkc-sS-Frh"/>
+                        <outlet property="showAlertViewCotrollerButton" destination="uGV-HC-5oL" id="tk0-cT-LJF"/>
+                        <outlet property="showImagePickerButton" destination="Ggk-rN-Xfz" id="T1Z-Kb-A7R"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
