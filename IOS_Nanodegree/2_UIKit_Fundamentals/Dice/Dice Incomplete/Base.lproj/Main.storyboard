@@ -21,30 +21,59 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0CI-ro-g3x">
-                                <rect key="frame" x="94.5" y="318.5" width="186" height="30"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nq4-hK-sT5">
+                                <rect key="frame" x="91" y="273" width="193" height="120"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W09-7A-mDr" userLabel="Roll The Dice No Segue">
+                                        <rect key="frame" x="5" y="5" width="183" height="30"/>
+                                        <state key="normal" title="Roll The Dice No Segue!"/>
+                                        <connections>
+                                            <action selector="rollTheDice" destination="vXZ-lx-hvc" eventType="touchUpInside" id="dGH-ph-JlF"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t1w-OL-9cP" userLabel="Roll the Dice Segue">
+                                        <rect key="frame" x="5" y="45" width="183" height="30"/>
+                                        <state key="normal" title="Roll The Dice Segue!"/>
+                                        <connections>
+                                            <action selector="rollTheDiceSegue" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Zca-cB-GkB"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zGh-X7-fB3" userLabel="Roll The Dice Direct Segue">
+                                        <rect key="frame" x="5" y="85" width="183" height="30"/>
+                                        <state key="normal" title="Roll The Dice Direct Segue"/>
+                                        <connections>
+                                            <segue destination="qUR-90-axl" kind="modal" identifier="rollDiceDirectly" id="ePO-IB-jBd"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="8Fp-fd-Z9X"/>
-                                    <constraint firstAttribute="width" constant="186" id="rfV-ro-5cd"/>
+                                    <constraint firstAttribute="bottom" secondItem="zGh-X7-fB3" secondAttribute="bottom" constant="5" id="0Ay-N3-JCn"/>
+                                    <constraint firstAttribute="trailing" secondItem="t1w-OL-9cP" secondAttribute="trailing" constant="5" id="1bQ-TF-swu"/>
+                                    <constraint firstItem="zGh-X7-fB3" firstAttribute="leading" secondItem="Nq4-hK-sT5" secondAttribute="leading" constant="5" id="52N-GH-EhL"/>
+                                    <constraint firstAttribute="trailing" secondItem="zGh-X7-fB3" secondAttribute="trailing" constant="5" id="5jx-IP-JDk"/>
+                                    <constraint firstItem="t1w-OL-9cP" firstAttribute="leading" secondItem="Nq4-hK-sT5" secondAttribute="leading" constant="5" id="729-lN-Wjc"/>
+                                    <constraint firstItem="t1w-OL-9cP" firstAttribute="top" secondItem="W09-7A-mDr" secondAttribute="bottom" constant="10" id="XBS-85-A8w"/>
+                                    <constraint firstAttribute="trailing" secondItem="W09-7A-mDr" secondAttribute="trailing" constant="5" id="lhK-Mk-EkV"/>
+                                    <constraint firstItem="zGh-X7-fB3" firstAttribute="top" secondItem="t1w-OL-9cP" secondAttribute="bottom" constant="10" id="nGf-KI-PCB"/>
+                                    <constraint firstItem="W09-7A-mDr" firstAttribute="top" secondItem="Nq4-hK-sT5" secondAttribute="top" constant="5" id="vTz-OH-miD"/>
+                                    <constraint firstItem="W09-7A-mDr" firstAttribute="leading" secondItem="Nq4-hK-sT5" secondAttribute="leading" constant="5" id="vnD-X8-PsJ"/>
                                 </constraints>
-                                <state key="normal" title="Roll The Dice!">
-                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="rollTheDice" destination="vXZ-lx-hvc" eventType="touchUpInside" id="rec-Ne-HY7"/>
-                                </connections>
-                            </button>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="0CI-ro-g3x" secondAttribute="centerX" id="E9c-st-9Hg"/>
-                            <constraint firstAttribute="centerY" secondItem="0CI-ro-g3x" secondAttribute="centerY" id="icH-2t-PDN"/>
+                            <constraint firstItem="Nq4-hK-sT5" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="3rn-UK-mFm"/>
+                            <constraint firstItem="Nq4-hK-sT5" firstAttribute="centerY" secondItem="kh9-bI-dsS" secondAttribute="centerY" id="eqQ-LA-0qT"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <segue destination="qUR-90-axl" kind="modal" identifier="rollDice" id="GNd-u5-aj0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="248.53333333333333" y="879.45333333333338"/>
+            <point key="canvasLocation" x="10" y="879"/>
         </scene>
         <!--Dice View Controller-->
         <scene sceneID="Kym-1j-YxR">
@@ -122,4 +151,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4_7.fullscreen"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="ePO-IB-jBd"/>
+    </inferredMetricsTieBreakers>
 </document>
