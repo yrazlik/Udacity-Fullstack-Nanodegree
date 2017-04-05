@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tfe-pl-BUO">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem title="Camera" id="6BJ-fB-2L8" userLabel="Camera">
+                                        <connections>
+                                            <action selector="pickAnImageFromCamera:" destination="BYZ-38-t0r" id="vHQ-Ay-ewi"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Album" id="W5w-BK-PDv" userLabel="Album">
+                                        <connections>
+                                            <action selector="pickAnImageFromAlbum:" destination="BYZ-38-t0r" id="0hT-eC-4lU"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Iqh-ND-tco">
+                                <rect key="frame" x="26" y="35" width="323" height="573"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Iqh-ND-tco" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="15" id="5u3-qM-tS6"/>
+                            <constraint firstAttribute="trailing" secondItem="tfe-pl-BUO" secondAttribute="trailing" id="bZ9-vK-XTz"/>
+                            <constraint firstItem="tfe-pl-BUO" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="dt0-J7-GLT"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Iqh-ND-tco" secondAttribute="trailing" constant="10" id="gVo-Hc-9Ab"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="tfe-pl-BUO" secondAttribute="bottom" id="jwF-ih-73n"/>
+                            <constraint firstItem="tfe-pl-BUO" firstAttribute="top" secondItem="Iqh-ND-tco" secondAttribute="bottom" constant="15" id="vyJ-Ll-jP8"/>
+                            <constraint firstItem="Iqh-ND-tco" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="xzJ-WL-jCT"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="cameraButton" destination="6BJ-fB-2L8" id="puv-PJ-5MG"/>
+                        <outlet property="memeImage" destination="Iqh-ND-tco" id="JDa-lp-nfH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
