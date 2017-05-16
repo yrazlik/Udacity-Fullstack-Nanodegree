@@ -12,6 +12,7 @@
 		94515EC01E94C9BD0031E9F9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94515EBE1E94C9BD0031E9F9 /* Main.storyboard */; };
 		94515EC21E94C9BD0031E9F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94515EC11E94C9BD0031E9F9 /* Assets.xcassets */; };
 		94515EC51E94C9BD0031E9F9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94515EC31E94C9BD0031E9F9 /* LaunchScreen.storyboard */; };
+		94A127441E9614D800F701CF /* Meme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A127431E9614D800F701CF /* Meme.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		94515EC11E94C9BD0031E9F9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		94515EC41E94C9BD0031E9F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		94515EC61E94C9BD0031E9F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		94A127431E9614D800F701CF /* Meme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Meme.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 				94515EC11E94C9BD0031E9F9 /* Assets.xcassets */,
 				94515EC31E94C9BD0031E9F9 /* LaunchScreen.storyboard */,
 				94515EC61E94C9BD0031E9F9 /* Info.plist */,
+				94A127431E9614D800F701CF /* Meme.swift */,
 			);
 			path = MemeMe;
 			sourceTree = "<group>";
@@ -136,6 +139,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94A127441E9614D800F701CF /* Meme.swift in Sources */,
 				94515EBD1E94C9BC0031E9F9 /* ViewController.swift in Sources */,
 				94515EBB1E94C9BC0031E9F9 /* AppDelegate.swift in Sources */,
 			);
@@ -299,6 +303,7 @@
 				94515ECB1E94C9BD0031E9F9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
