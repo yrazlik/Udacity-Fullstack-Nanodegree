@@ -30,20 +30,35 @@ var work = {
         {
             "employer": "Open Business Software Solutions",
             "position": "Android Developer",
+            "dates": "2014-present",
             "years": 3,
             "city": "Istanbul",
             "description": "Developed Android applications for clients"
+        },
+        {
+            "employer": "Mälardalens Högskola",
+            "position": "Intern",
+            "dates": "2013",
+            "years": 0.5,
+            "city": "Västerås",
+            "description": "Used CMUSphinx and participated in an ıngiong project about robots and speech recgnition"
         }
     ]
 };
 
-var project = [
-                  {
-                      "name":"GittiGidiyor Android Application",
-                      "url":"https://play.google.com/store/apps/details?id=com.gittigidiyormobil",
-                      "img":"https://lh3.googleusercontent.com/iPhTMnWuGB9tto2U31kS-LUumiQlwOLWBfGXG2BkTUzmso2EhstcN9D0Ypxo5Enreg=w300"
-                  }
-              ];
+var projects = {
+                  "projects": [
+                      {
+                          "title":"GittiGidiyor Android Application",
+                          "dates":"2014-2017",
+                          "description": "GittiGidiyor Android Application Implementation",
+                          "url":"https://play.google.com/store/apps/details?id=com.gittigidiyormobil",
+                          "images": [
+                            "https://lh3.googleusercontent.com/iPhTMnWuGB9tto2U31kS-LUumiQlwOLWBfGXG2BkTUzmso2EhstcN9D0Ypxo5Enreg=w300"
+                          ]
+                      }
+                  ]
+              };
 
 var education = {
                     "schools": [
@@ -74,6 +89,24 @@ var education = {
                     ]
                 };
 
+function displayWork() {
+    if(work["jobs"] !== null && work["jobs"] !== undefined && work["jobs"].length > 0) {
+      for(job in work["jobs"]){
+        $("#workExperience").append(HTMLworkStart);
+        var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
+        var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].position);
+        var formattedEmployerTitle = formattedEmployer + formattedTitle;
+        $(".work-entry:last").append(formattedEmployerTitle);
+
+        var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
+        $(".work-entry:last").append(formattedDates);
+
+         var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
+        $(".work-entry:last").append(formattedDescription);
+      }
+  }
+}
+
 if(bio["skills"] !== null && bio["skills"] !== undefined && bio.skills.length > 0) {
       $("#header").append(HTMLskillsStart);
       var formattedSkill = HTMLskills.replace("%data%", bio.skills[0]);
@@ -84,16 +117,60 @@ if(bio["skills"] !== null && bio["skills"] !== undefined && bio.skills.length > 
       $("#skills").append(formattedSkill);
 }
 
-if(work["jobs"] !== null && work["jobs"] !== undefined && work["jobs"].length > 0) {
-      for(job in work["jobs"]){
-        $("#workExperience").append(HTMLworkStart);
-        var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
-        var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].position);
-        var formattedEmployerTitle = formattedEmployer + formattedTitle;
-        $(".work-entry:last").append(formattedEmployerTitle);
-      }
+$(document).click(function(loc) {
+    var x = loc.pageX;
+    var y = loc.pageY;
+
+    logClicks(x,y);
+});
+
+var inName = function(name) {
+    if(name !== null && name.length > 0) {
+        var splittedName = name.trim().split(" ");
+        if(splittedName.length == 1) {
+            return name;
+        }
+
+        var capitalizedName = "";
+
+        for(var i = 0; i < splittedName.length; i++) {
+            if(i == splittedName.length - 1) {
+                splittedName[i] = splittedName[i].toUpperCase();
+            }
+            capitalizedName += " " + splittedName[i];
+        }
+        return capitalizedName.trim();
+    }
 }
 
+projects.display = function() {
+    for(project in projects.projects) {
+        $("#projects").append(HTMLprojectStart);
+
+        var formattedTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title);
+        $(".project-entry:last").append(formattedTitle);
+
+        var formattedDates = HTMLprojectDates.replace("%data%", projects.projects[project].dates);
+        $(".project-entry:last").append(formattedDates);
+
+        var formattedDescription = HTMLprojectDescription.replace("%data%", projects.projects[project].description);
+        $(".project-entry:last").append(formattedDescription);
+
+        if(projects.projects[project].images.length > 0) {
+            for(image in projects.projects[project].images) {
+                var formattedImage = HTMLprojectImage.replace("%data%", projects.projects[project].images[image]);
+                $(".project-entry:last").append(formattedImage);
+            }
+        }
+    }
+}
+
+displayWork();
+projects.display();
+$("#mapDiv").append(googleMap);
+
+//$("#main").append(internationalizeButton);
+//$("#main").append(inName("yasin razlik"));
 
 //bio.name = "Yasin Razlik";
 //bio.skills.push("Swift");
