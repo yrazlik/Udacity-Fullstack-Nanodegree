@@ -1,5 +1,5 @@
 *{
-    -webkit-box-sizing: border-box;
+    -webkit-box-sizing: border-box; /* Makes sure that the element's height and width contains paddings and margins */
     -moz-box-sizing: border-box;
     -ms-box-sizing: border-box;
     box-sizing: border-box;
@@ -28,5 +28,5 @@
 }
 
 .app {
-    display: flex;
+    display: flex; /* Put this in the container layout if you want the child elements to be positioned next to each other, not below. Such as a LinearLayout with horizontal orientation, not vertical. */
 }
