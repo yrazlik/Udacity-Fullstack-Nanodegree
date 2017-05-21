@@ -1,0 +1,12 @@
+html, body, main {
+    height: 100%;
+    width: 100%;
+}
+
+.dark_blue {
+    background-color: #210fe2;
+}
+
+.light_blue {
+    background-color: #2dc6ed;
+}

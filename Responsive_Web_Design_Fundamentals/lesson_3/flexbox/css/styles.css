@@ -1,0 +1,37 @@
+
+.container {
+    width: 100%;
+    display: flex;    /* Makes views place next to each other*/
+    flex-wrap: wrap;  /* It is ok to move views to next line if space is not enough*/
+}
+
+.box {
+    width: 350px;
+    height: 100px;
+}
+
+.dark_blue {
+    background-color: #0500ad;
+}
+
+.light_blue {
+    background-color: #2dd0e2;
+}
+
+.green {
+    background-color: #04ce25;
+}
+
+@media screen and (min-width: 700px) {
+    .dark_blue {
+        order: 2;
+    }
+
+    .light_blue {
+        order: 3;
+    }
+
+    .green {
+        order: 1;
+    }
+}

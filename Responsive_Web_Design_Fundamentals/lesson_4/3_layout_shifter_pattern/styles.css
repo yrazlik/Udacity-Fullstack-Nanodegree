@@ -1,0 +1,58 @@
+.container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.box {
+    width: 100%;
+}
+
+.blue {
+    background-color: blue;
+    min-height: 200px;
+}
+
+.orange {
+    background-color: orange;
+    min-height: 200px;
+}
+
+.green {
+    background-color: green;
+    min-height: 200px;
+}
+
+.red {
+    background-color: red;
+    min-height: 200px;
+}
+
+
+@media screen and (min-width: 500px) {
+    .blue {
+        width: 50%;
+    }
+
+    #container2 {
+        width: 50%;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    .red {
+        order: 1;
+        width: 25%;
+
+    }
+
+    #container2 {
+        order: 2;
+        width: 50%;
+    }
+
+    .blue {
+        order: 3;
+        width: 25%;
+    }
+}
