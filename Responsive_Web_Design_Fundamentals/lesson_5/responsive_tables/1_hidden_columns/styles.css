@@ -1,0 +1,15 @@
+
+
+@media screen and (max-width: 500px) {
+    body {
+    margin: 1em;
+}
+
+    .longName {
+       display: none;
+    }
+
+    .inning {
+        display: none;
+    }
+}
